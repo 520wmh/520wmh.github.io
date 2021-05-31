@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="https://i-1-lanrentuku.qqxzb-img.com/2020/11/5/25fd9e39-3975-40e7-9766-238cbf944d55.png?imageView2/2/w/1024/" type="image/x-icon">
+<script>            //鼠标点击出现爱心特效
+		(function(window,document,undefined){
+			var hearts = [];
+			window.requestAnimationFrame = (function(){
+				return window.requestAnimationFrame ||
+				window.webkitRequestAnimationFrame ||
+				window.mozRequestAnimationFrame ||
+				window.oRequestAnimationFrame ||
+				window.msRequestAnimationFrame ||
+				function (callback){
+					setTimeout(callback,1000/60);
+				}
+			})();
+			init();
+			function init(){
+				css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+				attachEvent();
+				gameloop();
+			}
+			function gameloop(){
+				for(var i=0;i<hearts.length;i++){
+					if(hearts[i].alpha <=0){
+						document.body.removeChild(hearts[i].el);
+						hearts.splice(i,1);
+						continue;
+					}
+					hearts[i].y--;
+					hearts[i].scale += 0.004;
+					hearts[i].alpha -= 0.013;
+					hearts[i].el.style.cssText = "left:"+hearts[i].x+"px;top:"+hearts[i].y+"px;opacity:"+hearts[i].alpha+";transform:scale("+hearts[i].scale+","+hearts[i].scale+") rotate(45deg);background:"+hearts[i].color;
+				}
+				requestAnimationFrame(gameloop);
+			}
+			function attachEvent(){
+				var old = typeof window.onclick==="function" && window.onclick;
+				window.onclick = function(event){
+					old && old();
+					createHeart(event);
+				}
+			}
+			function createHeart(event){
+				var d = document.createElement("div");
+				d.className = "heart";
+				hearts.push({
+					el : d,
+					x : event.clientX - 5,
+					y : event.clientY - 5,
+					scale : 1,
+					alpha : 1,
+					color : randomColor()
+				});
+				document.body.appendChild(d);
+			}
+			function css(css){
+				var style = document.createElement("style");
+				style.type="text/css";
+				try{
+					style.appendChild(document.createTextNode(css));
+				}catch(ex){
+					style.styleSheet.cssText = css;
+				}
+				document.getElementsByTagName('head')[0].appendChild(style);
+			}
+			function randomColor(){
+				return "rgb("+(~~(Math.random()*255))+","+(~~(Math.random()*255))+","+(~~(Math.random()*255))+")";
+			}
+		})(window,document);</script>
+		<script>function text() { 
+}; 
+
+text = new text(); 
+number = 0; 
+
+// textArray 
+text[number++] = "两情若是久长时，又岂在朝朝暮暮。" 
+text[number++] = "何当共剪西窗烛，却话巴山夜雨时。" 
+text[number++] = "相见时难别亦难，东风无力百花残。" 
+text[number++] = 
+"金风玉露一相逢，便胜却人间无数。"
+// keep adding items here... 
+
+increment = Math.floor(Math.random() * number); 
+
+document.write(text[increment]); </script>
+<font size="10">
+<font color="#FF60AF">
+
+<title>Love river</title>
+</head>
+<audio controls>
+  <source src="https://cdn.jsdelivr.net/gh/coolapijust/vipwatch@main/2828799815.mp3?raw=true"" type="audio/mpeg">
+  您的浏览器不支持 audio 元素。
+</audio>
+<style type="text/css">
+body
+
+{ 
+
+background: url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=307837214,3371100002&fm=26&gp=0.jpg) ; 
+
+/*background-image: url(bg.jpg);*/
+
+}
+
+</style>
+ 
+<body>
+    
+
+
+      王明昊，我喜欢你！
+        --曹蒋思玥
+</body>
+</html>
